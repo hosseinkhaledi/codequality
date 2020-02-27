@@ -1,0 +1,7 @@
+test/fixtures/.codeclimate.yml
+test/fixtures/.csslintrc
+test/fixtures/.eslintignore
+test/fixtures/.eslintrc.yml
+test/fixtures/.rubocop.yml
+test/fixtures/coffeelint.json
+test/fixtures/codeclimate.json
