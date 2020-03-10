@@ -2,6 +2,8 @@
 
 GitLab Code Quality versions follow the Code Climate versions used, and generate a `[CODE_CLIMATE_VERSION]-gitlab.[CHANGE_INCREMENT]` [Docker image](https://gitlab.com/gitlab-org/ci-cd/codequality/container_registry). Versioning before `0.85.5` was based on major GitLab versions, and was deprecated after GitLab `12.4`.
 
+## 0.85.9
+
 ## 0.85.8
 
 ## 0.85.7 (skipped)
