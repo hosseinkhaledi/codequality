@@ -32,7 +32,8 @@ APP_PATH=$1
 REPORT_FILENAME="gl-code-quality-report.json"
 DEFAULT_FILES_PATH=${DEFAULT_FILES_PATH:-/codeclimate_defaults}
 CODECLIMATE_VERSION=${CODECLIMATE_VERSION:-0.85.9}
-CODECLIMATE_IMAGE="codeclimate/codeclimate:$CODECLIMATE_VERSION"
+CODECLIMATE_IMAGE="${CODECLIMATE_IMAGE:-codeclimate/codeclimate}"
+CODECLIMATE_FULL_IMAGE="$CODECLIMATE_IMAGE:$CODECLIMATE_VERSION"
 CONTAINER_TIMEOUT_SECONDS=${TIMEOUT_SECONDS:-900} # default to 15 min
 
 if [ -z "$SOURCE_CODE" ] ; then
@@ -62,7 +63,7 @@ fi
 # Pull the code climate image in advance of running the container to
 # suppress progress.  The `--quiet` option is not passed to support
 # Docker 18.09 or earlier: https://github.com/docker/cli/pull/882
-docker pull "$CODECLIMATE_IMAGE" > /dev/null
+docker pull "${CODECLIMATE_FULL_IMAGE}" > /dev/null
 
 # We need to run engines:install before analyze to avoid hitting timeout errors.
 # See: https://github.com/codeclimate/codeclimate/issues/866#issuecomment-418758879
@@ -74,7 +75,7 @@ docker run \
     --volume "$SOURCE_CODE":/code \
     --volume /tmp/cc:/tmp/cc \
     --volume /var/run/docker.sock:/var/run/docker.sock \
-    "$CODECLIMATE_IMAGE" engines:install > /dev/null
+    "${CODECLIMATE_FULL_IMAGE}" engines:install > /dev/null
 
 if [ $? -ne 0 ]; then
     echo "Could not install code climate engines for the repository at $APP_PATH"
@@ -95,7 +96,7 @@ docker run \
     --volume "$SOURCE_CODE":/code \
     --volume /tmp/cc:/tmp/cc \
     --volume /var/run/docker.sock:/var/run/docker.sock \
-    "$CODECLIMATE_IMAGE" analyze ${CODECLIMATE_DEV:+--dev} -f json > /tmp/raw_codeclimate.json
+    "${CODECLIMATE_FULL_IMAGE}" analyze ${CODECLIMATE_DEV:+--dev} -f json > /tmp/raw_codeclimate.json
 
 if [ $? -ne 0 ]; then
     echo "Could not analyze code quality for the repository at $APP_PATH"
