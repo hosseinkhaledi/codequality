@@ -28,8 +28,8 @@ GitLab Code Quality versions follow the Code Climate versions used, and generate
 ## 12-1-stable
 
 - Fix TIMEOUT_SECONDS setting
-- Add optional variable(`CODECLIMATE_DEV`) to enable Code Climate development mode
-- Add optional variable(`REPORT_STDOUT`) to print the result to `STDOUT` instead of generating the usual report file
+- Add optional variable `CODECLIMATE_DEV` to enable Code Climate development mode
+- Add optional variable `REPORT_STDOUT` to print the result to `STDOUT` instead of generating the usual report file
 
 ## 12-0-stable
 
@@ -39,7 +39,7 @@ GitLab Code Quality versions follow the Code Climate versions used, and generate
 
 - Upgrade Code Climate to 0.85.1
 - Update Code Climate default excludes
-- Add optional variable(`CODECLIMATE_DEBUG`) to enable Code Climate debug logging
+- Add optional variable `CODECLIMATE_DEBUG` to enable Code Climate debug logging
 
 ## 11-9-stable
 
@@ -69,7 +69,7 @@ GitLab Code Quality versions follow the Code Climate versions used, and generate
 ## 10-8-stable
 
 - Update to Code Climate 0.71.2
-- Add optional variable(`TIMEOUT_SECONDS`) to allow user to give a custom timeout for the `codeclimate analyze` command
+- Add optional variable `TIMEOUT_SECONDS` to allow user to give a custom timeout for the `codeclimate analyze` command
 
 ## 10-7-stable
 
