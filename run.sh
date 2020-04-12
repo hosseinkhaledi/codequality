@@ -34,6 +34,7 @@ DEFAULT_FILES_PATH=${DEFAULT_FILES_PATH:-/codeclimate_defaults}
 CODECLIMATE_VERSION=${CODECLIMATE_VERSION:-0.85.9}
 CODECLIMATE_IMAGE="codeclimate/codeclimate:$CODECLIMATE_VERSION"
 CONTAINER_TIMEOUT_SECONDS=${TIMEOUT_SECONDS:-900} # default to 15 min
+ENGINE_MEMORY_LIMIT_BYTES=${ENGINE_MEMORY_LIMIT_BYTES:-1024000000} # default 1 Gb
 
 if [ -z "$SOURCE_CODE" ] ; then
   echo "SOURCE_CODE env variable not set"
@@ -88,10 +89,13 @@ fi
 # window for the analyze command.
 # CODECLIMATE_DEBUG env variable is optional. It enables Code Climate debug
 # logging.
+# ENGINE_MEMORY_LIMIT_BYTES env variable is optional. It configures the default
+# allocated memory with which each engine runs
 docker run \
     --env CODECLIMATE_CODE="$SOURCE_CODE" \
     --env CODECLIMATE_DEBUG="$CODECLIMATE_DEBUG" \
     --env CONTAINER_TIMEOUT_SECONDS="$CONTAINER_TIMEOUT_SECONDS" \
+    --env ENGINE_MEMORY_LIMIT_BYTES="$ENGINE_MEMORY_LIMIT_BYTES" \
     --volume "$SOURCE_CODE":/code \
     --volume /tmp/cc:/tmp/cc \
     --volume /var/run/docker.sock:/var/run/docker.sock \
