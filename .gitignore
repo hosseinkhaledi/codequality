@@ -5,3 +5,6 @@ test/fixtures/.eslintrc.yml
 test/fixtures/.rubocop.yml
 test/fixtures/coffeelint.json
 test/fixtures/codeclimate.json
+
+# Ignore IDE specific files
+.idea/
