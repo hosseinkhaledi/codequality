@@ -31,13 +31,14 @@ Some tools require to be able to launch Docker containers to scan your applicati
 
 Code Quality can be configured with environment variables, here is a list:
 
-| Name              | Function                                                                                                  |
-| ----------------- | --------------------------------------------------------------------------------------------------------- |
-| SOURCE_CODE       | Path to the source code to scan                                                                           |
-| TIMEOUT_SECONDS   | Custom timeout for the `codeclimate analyze` command                                                      |
-| CODECLIMATE_DEBUG | Set to enable [Code Climate debug mode](https://github.com/codeclimate/codeclimate#environment-variables) |
-| CODECLIMATE_DEV   | Set to enable `--dev` mode which lets you run engines not known to the CLI.                               |
-| REPORT_STDOUT     | Set to print the report to `STDOUT` instead of generating the usual report file.                          |
+| Name                        | Function                                                                                                  |
+| ----------------------------| --------------------------------------------------------------------------------------------------------- |
+| SOURCE_CODE                 | Path to the source code to scan                                                                           |
+| TIMEOUT_SECONDS             | Custom timeout for the `codeclimate analyze` command                                                      |
+| CODECLIMATE_DEBUG           | Set to enable [Code Climate debug mode](https://github.com/codeclimate/codeclimate#environment-variables) |
+| CODECLIMATE_DEV             | Set to enable `--dev` mode which lets you run engines not known to the CLI.                               |
+| REPORT_STDOUT               | Set to print the report to `STDOUT` instead of generating the usual report file.                          |
+| ENGINE_MEMORY_LIMIT_BYTES   | Set the memory limit for engines, default is 1,024,000,000 bytes.                                         |
 
 ### Configuration
 
