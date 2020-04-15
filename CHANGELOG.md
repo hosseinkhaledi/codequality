@@ -2,6 +2,16 @@
 
 GitLab Code Quality versions follow the Code Climate versions used, and generate a `[CODE_CLIMATE_VERSION]-gitlab.[CHANGE_INCREMENT]` [Docker image](https://gitlab.com/gitlab-org/ci-cd/codequality/container_registry). Versioning before `0.85.5` was based on major GitLab versions, and was deprecated after GitLab `12.4`.
 
+## master (unreleased)
+
+## 0.85.9-gitlab.2
+- Add support for overriding the memory limit via the `ENGINE_MEMORY_LIMIT_BYTES` env variable
+
+## 0.85.9-gitlab.1
+- Add temporary support for overriding the CodeClimate image used via the `CODECLIMATE_IMAGE` env variable
+
+## 0.85.9
+
 ## 0.85.9
 
 ## 0.85.8
