@@ -5,6 +5,8 @@ GitLab Code Quality versions follow the Code Climate versions used, and generate
 ## master (unreleased)
 - Add jest test pattern to excluded patterns of code climate (!14)
 
+## 0.85.10
+
 ## 0.85.9-gitlab.2
 - Add support for overriding the memory limit via the `ENGINE_MEMORY_LIMIT_BYTES` env variable
 
